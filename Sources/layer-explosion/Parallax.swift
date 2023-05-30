@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ParallaxModifier: ViewModifier {
+public struct ParallaxModifier: ViewModifier {
     var zIndex: Int
     
     @Environment(\.parallaxLevel) var parallaxLevel
@@ -16,7 +16,7 @@ struct ParallaxModifier: ViewModifier {
     @Environment(\.parallaxStrength) var parallaxStrength
     
     @ViewBuilder
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         let actualLevel = parallaxLevel + zIndex
         let offsetDamp = 0.2 * parallaxStrength
         
@@ -61,8 +61,8 @@ struct ParallaxModifier: ViewModifier {
     }
 }
 
-extension View {
-    func parallaxLayer(zIndex: Int = 0) -> some View {
+public extension View {
+    public func parallaxLayer(zIndex: Int = 0) -> some View {
         self
             .modifier(ParallaxModifier(zIndex: zIndex))
     }
