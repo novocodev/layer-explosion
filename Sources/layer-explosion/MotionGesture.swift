@@ -91,7 +91,7 @@ struct ParallaxMotionGesture: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     public func parallaxMotionGesture(strength: Double = 1) -> some View {
         self
             .contentShape(Rectangle())
