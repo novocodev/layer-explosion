@@ -77,7 +77,7 @@ class MotionManager: ObservableObject {
     }
 }
 
-struct ParallaxMotionGesture: ViewModifier {
+public struct ParallaxMotionGesture: ViewModifier {
     var strength: Double
     @StateObject private var motion = MotionManager()
     
